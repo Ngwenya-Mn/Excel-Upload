@@ -1,0 +1,15 @@
+
+#content{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    height:80vh;
+}
+input{
+    border:2px solid green;
+    width:60%;
+    padding: 10px;
+    border-radius: 10px;
+}
