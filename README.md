@@ -1,12 +1,12 @@
 # Excel_Upload Documentation
-### Tools Used
+## Tools Used
 * HTML
 * CSS
 * JavaScript
 * Bootstrap
 * JQuery
 <hr/>
-## **PROJECT REPORT**
+### PROJECT REPORT
 1. **User Interface**:
      Describe how you designed a clean and user-friendly interface with HTML and Bootstrap, including a file upload button that allows users to submit their CSV or Excel files.
 2. **File Processing**: 
