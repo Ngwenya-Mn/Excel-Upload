@@ -23,40 +23,40 @@ function changer() {
 }
 
 function displayTable(data) {
-  const tableContainer = document.getElementById('dataviewer');
-  tableContainer.innerHTML = '';
+  const tableContainer = $('#dataviewer');
+  tableContainer.empty();
 
   if (data.length === 0) {
-    tableContainer.innerHTML = '<p>No data found</p>';
+    tableContainer.append('<p>No data found</p>');
     return;
   }
 
-  const table = document.createElement('table');
-  table.className = 'table table-striped';
+  const table = $('<table></table>');
+  table.addClass('table table-striped');
 
-  // Create table header
-  const thead = document.createElement('thead');
-  const headerRow = document.createElement('tr');
+  //table header
+  const thead = $('<thead></thead>');
+  const headerRow = $('<tr></tr>');
   data[0].forEach(header => {
-    const th = document.createElement('th');
-    th.textContent = header;
-    headerRow.appendChild(th);
+    const th = $('<th></th>');
+    th.text(header);
+    headerRow.append(th);
   });
-  thead.appendChild(headerRow);
-  table.appendChild(thead);
+  thead.append(headerRow);
+  table.append(thead);
 
-  // Create table body
-  const tbody = document.createElement('tbody');
+  //table body
+  const tbody = $('<tbody></tbody>');
   for (let i = 1; i < data.length; i++) {
-    const row = document.createElement('tr');
+    const row = $('<tr></tr>');
     data[i].forEach(cell => {
-      const td = document.createElement('td');
-      td.textContent = cell;
-      row.appendChild(td);
+      const td = $('<td></td>');
+      td.text(cell);
+      row.append(td);
     });
-    tbody.appendChild(row);
+    tbody.append(row);
   }
-  table.appendChild(tbody);
+  table.append(tbody);
 
-  tableContainer.appendChild(table);
+  tableContainer.append(table);
 }
