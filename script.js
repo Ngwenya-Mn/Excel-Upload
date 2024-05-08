@@ -1,77 +1,62 @@
-var file = document.getElementById("file_upload");
-var viewer = document.getElementById("dataviewer");
+function changer() {
+  const fileInput = document.getElementById('file_upload');
+  const file = fileInput.files[0];
 
-file.addEventListener("change", importFile);
-
-function importFile(evt) {
-  var f = evt.target.files[0];
-
-  if (f) {
-    var r = new FileReader();
-    r.onload = (e) => {
-      var contents = processFile(e.target.result, f.name);
-      console.log(contents);
-      displayTable(contents);
+  if (file) {
+    const fileName = file.name;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const data = e.target.result;
+      const workbook = XLSX.read(data, { type: 'binary' });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+      displayTable(jsonData);
     };
-    r.readAsBinaryString(f);
+    reader.onerror = function() {
+      console.error('Error reading file');
+    };
+    reader.readAsBinaryString(file);
   } else {
-    console.log("Failed to load file");
+    console.error('No file selected');
   }
-}
-function processFile(data, fileName) {
-  if (fileName.endsWith(".csv")) {
-    return processCSV(data);
-  } else if (fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
-    return processExcel(data);
-  } else {
-    console.log("Unsupported file format");
-    return null;
-  }
-}
-
-function processCSV(data) {
-  // Assuming CSV data is directly usable
-  return data;
-}
-
-function processExcel(data) {
-  var workbook = XLSX.read(data, { type: "binary" });
-  var firstSheet = workbook.SheetNames[0];
-  var jsonData = to_json(workbook);
-  return jsonData;
-}
-
-function to_json(workbook) {
-  var result = {};
-  workbook.SheetNames.forEach(function (sheetName) {
-    var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], {
-      header: 1,
-    });
-    if (roa.length) result[sheetName] = roa;
-  });
-  return result;
 }
 
 function displayTable(data) {
-  // Assuming data is in JSON format
-  var tableHTML = '<table class="table table-striped">';
-  for (var sheetName in data) {
-    tableHTML +=
-      '<thead><tr><th colspan="' +
-      data[sheetName][0].length +
-      '">' +
-      sheetName +
-      "</th></tr></thead>";
-    tableHTML += "<tbody>";
-    data[sheetName].forEach(function (row) {
-      tableHTML += "<tr>";
-      row.forEach(function (cell) {
-        tableHTML += "<td>" + cell + "</td>";
-      });
-      tableHTML += "</tr>";
-    });
-    tableHTML += "</tbody>";
+  const tableContainer = document.getElementById('dataviewer');
+  tableContainer.innerHTML = '';
+
+  if (data.length === 0) {
+    tableContainer.innerHTML = '<p>No data found</p>';
+    return;
   }
-  tableHTML += "</table>";
-  viewer.innerHTML = tableHTML;
+
+  const table = document.createElement('table');
+  table.className = 'table table-striped';
+
+  // Create table header
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  data[0].forEach(header => {
+    const th = document.createElement('th');
+    th.textContent = header;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  // Create table body
+  const tbody = document.createElement('tbody');
+  for (let i = 1; i < data.length; i++) {
+    const row = document.createElement('tr');
+    data[i].forEach(cell => {
+      const td = document.createElement('td');
+      td.textContent = cell;
+      row.appendChild(td);
+    });
+    tbody.appendChild(row);
+  }
+  table.appendChild(tbody);
+
+  tableContainer.appendChild(table);
 }

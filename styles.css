@@ -5,11 +5,15 @@
     text-align: center;
     width: 80%;
     margin:auto;
-    height:80vh;
+    
 }
 input{
     border:2px solid green;
     width:60%;
-    padding: 6px;
+    padding: 7px;
+    margin-top: 1px;
     border-radius: 10px;
+}
+#dataviewer{
+    max-width: 100%;
 }
