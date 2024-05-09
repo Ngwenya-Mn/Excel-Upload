@@ -12,8 +12,7 @@
 
 ### PROJECT REPORT
 
-**1.User Interface :**   it's
-
+**1.User Interface :**
     In this project HTML and Bootstrap were used to create the structure of the project.
 
     The HTML structure is well-organized and follows best practices.
@@ -52,8 +51,7 @@
     The custom script likely contains additional logic for handling file uploads, parsing data,
     and displaying it in the data viewer.
 
-**2.File Processing :** 
-    
+**2.File Processing :**    
     In the HTML code, an input element with the type set to "file" and an id assigned to it. 
     This allows users to select a file from their local file system.
 
@@ -80,8 +78,7 @@
     reader.onerror:
     This event is triggered if an error occurs while reading the file.
 
-**3.Data Display :** 
-
+**3.Data Display :**
     Parsing Excel File:
     Inside the onload function, the binary data of the file is accessed via e.target.result.
     This data is then passed to the XLSX.read() function from the SheetJS library. This function
@@ -115,7 +112,6 @@
     id(dataviewer) in the HTML document.
 
 **4.Styling :**
-
     Overall Page Layout:
     The HTML structure is wrapped in a div of bootstrap class(container-fluid), ensuring 
     that content spans the entire width of the viewport. Inside this container, the div with 
@@ -148,7 +144,6 @@
     enhancing readability and aesthetics.
 
 **5.Version Control :** 
-
     Collaboration via GitHub:
     Created a remote repository on GitHub.
     Pushed the local repository to GitHub using git remote add origin <repository_URL> and 
