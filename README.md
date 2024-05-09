@@ -28,7 +28,7 @@ The h2 tag displays the heading “Upload your files below excel/csv.”
 A horizontal line (hr) separates the heading from the file upload section.
 
 File Upload Section:
-The file upload section consists of an <input type="file"> element.
+The file upload section consists of an input element with a type which is file.
 The id(file_upload) attribute assigns an identifier to the input field.
 The class(form-control-file) ensures consistent styling with Bootstrap.
 The accept(.csv,.xlsx,.xls) attribute restricts file selection to CSV, Excel (.xlsx), and Excel 97-2003 (.xls) formats.
@@ -96,15 +96,15 @@ it appends a paragraph saying "No data found".
 
 Generating Table Headers:
 If data is found, the function dynamically generates an HTML table. It creates a 
-<table> element and adds the 'table' and 'table-striped' bootstrap classes to it. 
-Then it creates a <thead> element and within it, a <tr> element for the table headers. 
+table element and adds the 'table' and 'table-striped' bootstrap classes to it. 
+Then it creates a thead element and within it, a tr element for the table headers. 
 It loops through the first row of the JSON array (which contains the headers) and creates 
-a <th> element for each header, setting it's text to the header value.
+a th tag element for each header, setting it's text to the header value.
 
 Generating Table Body:
-After generating the table headers, the function creates a <tbody> element. It loops 
+After generating the table headers, the function creates a tbody element. It loops 
 through the remaining rows of the JSON array (excluding the header row) and for each 
-row, creates a <tr> element. Within each row, it creates a <td> element for each cell 
+row, creates a tr element. Within each row, it creates a td element for each cell 
 value and sets it's text accordingly.
 
 Appending Table to Container:
