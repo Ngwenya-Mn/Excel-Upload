@@ -12,6 +12,14 @@
 
 ### PROJECT REPORT
 
+**1.User Interface :**
+    In this project HTML and Bootstrap were used to create the structure of the project.
+
+    The HTMl structure is well organized and follows best practices.
+    The <head> section includes the necessary meta tags for character set and viewport settings.
+    The <title> tag provides a descriptive title for the page.
+    Exxternal stylesheets (Bootstrap and a custom styles.css) are linked in the <head> section.
+
 **2.File Processing :**    
     In the HTML code, an input element with the type set to "file" and an id assigned to it. 
     This allows users to select a file from their local file system.
