@@ -8,9 +8,7 @@
 - Bootstrap
 - JQuery
 
-**_Use this link to see the Project :_** https://thegiante.github.io/Excel-Upload/
-
-<hr/>
+**_Use this link to see the Project :_** https://thegiante.github.io/Excel-Upload/<hr/>
 
 ### PROJECT REPORT
 
@@ -18,16 +16,16 @@
 In this project HTML and Bootstrap were used to create the structure of the project.
 
 The HTML structure is well-organized and follows best practices.
-The <head> section includes the necessary meta tags for character set and viewport settings.
-The <title> tag provides a descriptive title for the page.
-External stylesheets (Bootstrap and a custom styles.css) are linked in the <head> section.
+The head section includes the necessary meta tags for character set and viewport settings.
+The title tag provides a descriptive title for the page.
+External stylesheets (Bootstrap and a custom styles.css) are linked in the head section.
 
 Page Content:
 The main content is wrapped in a bootstrap class(container-fluid), which ensures
 responsiveness across different screen sizes.
 Inside the container, there’s a div with an id(content) that holds the actual content.
-The <h2> tag displays the heading “Upload your files below excel/csv.”
-A horizontal line (<hr>) separates the heading from the file upload section.
+The h2 tag displays the heading “Upload your files below excel/csv.”
+A horizontal line (hr) separates the heading from the file upload section.
 
 File Upload Section:
 The file upload section consists of an <input type="file"> element.
