@@ -1,32 +1,32 @@
 # Excel_Upload Documentation
-
 ## Tools Used
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+* JQuery
 
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
-- JQuery
+***Use this link to see the Project :*** https://thegiante.github.io/Excel-Upload/
 
-**_Use this link to see the Project :_** https://thegiante.github.io/Excel-Upload/<hr/>
+<hr/>
 
 ### PROJECT REPORT
 
-**1.User Interface :**   it's
+**1.User Interface :**
 
 In this project HTML and Bootstrap were used to create the structure of the project.
 
 The HTML structure is well-organized and follows best practices.
-The <head> section includes the necessary meta tags for character set and viewport settings.
-The <title> tag provides a descriptive title for the page.
-External stylesheets (Bootstrap and a custom styles.css) are linked in the <head> section.
+The head tag section includes the necessary meta tags for character set and viewport settings.
+The title tag provides a descriptive title for the page.
+External stylesheets (Bootstrap and a custom styles.css) are linked in the head tag section.
 
 Page Content:
 The main content is wrapped in a bootstrap class(container-fluid), which ensures 
 responsiveness across different screen sizes.
 Inside the container, there’s a div with an id(content) that holds the actual content.
-The <h2> tag displays the heading “Upload your files below excel/csv.”
-A horizontal line (<hr>) separates the heading from the file upload section.
+The h2 tag displays the heading “Upload your files below excel/csv.”
+A horizontal line (hr) separates the heading from the file upload section.
 
 File Upload Section:
 The file upload section consists of an input element with a type which is file.
@@ -99,15 +99,15 @@ it appends a paragraph saying "No data found".
 
 Generating Table Headers:
 If data is found, the function dynamically generates an HTML table. It creates a 
-<table> element and adds the 'table' and 'table-striped' bootstrap classes to it. 
-Then it creates a <thead> element and within it, a <tr> element for the table headers. 
+table element and adds the 'table' and 'table-striped' bootstrap classes to it. 
+Then it creates a thead element and within it, a <tr element for the table headers. 
 It loops through the first row of the JSON array (which contains the headers) and creates 
 a <th> element for each header, setting it's text to the header value.
 
 Generating Table Body:
-After generating the table headers, the function creates a tbody element. It loops 
+After generating the table headers, the function creates a <tbody> element. It loops 
 through the remaining rows of the JSON array (excluding the header row) and for each 
-row, creates a tr element. Within each row, it creates a td element for each cell 
+row, creates a <tr> element. Within each row, it creates a <td> element for each cell 
 value and sets it's text accordingly.
 
 Appending Table to Container:
