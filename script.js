@@ -1,9 +1,10 @@
+var button = document.getElementById("submit-btn").addEventListener('click', changer);
+
 function changer() {
   const fileInput = document.getElementById('file_upload');
   const file = fileInput.files[0];
 
   if (file) {
-    const fileName = file.name;
     const reader = new FileReader();
     reader.onload = function(e) {
       const data = e.target.result;
